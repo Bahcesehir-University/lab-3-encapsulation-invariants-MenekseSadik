@@ -151,11 +151,9 @@ public:
     void transfer(BankAccount& other, double amount) {
         
           if(amount <= 0){
-         throw runtime_error("transfer amount must be positive");
+         throw invalid_argument("transfer amount must be positive");
         }
-         if(amount > balance_){
-         throw runtime_error("insufficient funds");
-         }
+         
          withdraw(amount);
          other.deposit(amount);
         
